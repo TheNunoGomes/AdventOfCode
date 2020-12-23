@@ -7,10 +7,6 @@
         <h1>Total bags that can carry a Shiny Gold Bag:</h1>
         <p id="total"></p>
         <button onclick="calculate()">Calculate</button>
-        
-        <h1>Total bags inside Shiny Gold Bag:</h1>
-        <p id="bagsInside"></p>
-        <button onclick="bagsInside()">Calculate</button>
 
     </body>
 </html>
@@ -651,53 +647,5 @@ clear gray bags contain 4 muted gray bags, 2 wavy turquoise bags, 3 dotted plum 
                 recursiveBags(bag.color)
             }
         })
-    }
-
-    var totalBags = 0
-    var nodeBags = 1
-
-    function bagsInside() {
-        bags = []
-        parentBags = []
-        array.forEach(rule => {
-            var color = rule.split(" contain ")[0].replace(" bags", "")
-            var contentsArray = rule.split(" contain ")[1].split(", ")
-            var contents = []
-            contentsArray.forEach(item => {
-                var quantity = parseInt(item.split(" ")[0]) ? parseInt(item.split(" ")[0]) : 0
-                var temp = item.split(" ")
-                var bag = ""
-                for(let i = 1; i < temp.length - 1; i++)
-                    bag += temp[i] + " "
-                bag = bag.slice(0, -1)
-                if(!quantity) bag = null
-                contents.push({
-                    quantity,
-                    bag
-                })
-            })
-            bags.push({
-                color,
-                contents
-            })
-        })
-        
-        recursiveShinyGold("shiny gold", 1)
-        document.getElementById("bagsInside").innerHTML = totalBags
-    }
-
-    function recursiveShinyGold(color, quantity) {
-        for(let i = 0; i < bags.length; i++) {
-            bag = bags[i]
-            if(bag.color != color) continue
-            
-            let childBags = bag.contents
-            childBags.forEach(child => {
-                if(child.quantity) {
-                    recursiveShinyGold(color, child.quantity) 
-                    totalBags += child.quantity
-                }
-            })
-        }
     }
 </script>
