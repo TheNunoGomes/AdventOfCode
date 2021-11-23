@@ -8,12 +8,12 @@ Days which's Part 2 are just a more complex version of Part 1 only contain the c
 
 *[Day 1 - Report Repair](/day1/day1.md)*
 
-*[Day 2 - Password Philosophy](https://github.com/TheNunoGomes/AdventOfCode2020/tree/main/day2/day2.md)*
+*[Day 2 - Password Philosophy](/day2/day2.md)*
 
-*[Day 3 - Toboggan Trajectory](https://github.com/TheNunoGomes/AdventOfCode2020/tree/main/day3/day3.md)*
+*[Day 3 - Toboggan Trajectory](/day3/day3.md)*
 
-*[Day 4 - Passport Processing](https://github.com/TheNunoGomes/AdventOfCode2020/tree/main/day4/day4.md)*
+*[Day 4 - Passport Processing](/day4/day4.md)*
 
-*[Day 5 - Binary Boarding](https://github.com/TheNunoGomes/AdventOfCode2020/tree/main/day5)*
+*[Day 5 - Binary Boarding](/day5)*
 
-*[Day 6 - Custom Customs](https://github.com/TheNunoGomes/AdventOfCode2020/tree/main/day6)*
+*[Day 6 - Custom Customs](/day6)*
