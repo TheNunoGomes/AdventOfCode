@@ -9,10 +9,54 @@ def checkIssueYear(iyr):
 def checkExpiryYear(eyr):
     return 2020 <= eyr <= 2030
 
-def checkHeight(height):
-    return (height.find("in") != -1 and 59 <= int(height.replace('in', '')) <= 76) or (height.find("cm") != -1 and 150 <= int(height.replace('cm', '')) <= 193)
+def checkHeight(hgt):
+    return (hgt.find("in") != -1 and 59 <= int(hgt.replace('in', '')) <= 76) or (hgt.find("cm") != -1 and 150 <= int(hgt.replace('cm', '')) <= 193)
+
+def checkHairColor(hcl):
+    import re
+    return re.search("^#([a-fA-F0-9]{6})$", hcl) != None
+
+def checkEyeColor(ecl):
+    return ecl in ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
+
+def checkPassportId(pid):
+    import re
+    return re.search("^([0-9]{9})$", pid) != None
 
 def validate1(data):
+    requiredFields = np.array(["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"])
+    validPassports = 0
+    for passport in data:
+        if len(passport) < 7:
+            continue
+        includedFields = np.array([])
+        for field in passport:
+            if field[0] == "byr":
+                includedFields = np.append(includedFields, field[0])
+            
+            elif field[0] == "iyr":
+                includedFields = np.append(includedFields, field[0])
+            
+            elif field[0] == "eyr":
+                includedFields = np.append(includedFields, field[0])
+            
+            elif field[0] == "hgt":
+                includedFields = np.append(includedFields, field[0])
+                    
+            elif field[0] == "hcl" :
+                includedFields = np.append(includedFields, field[0])
+            
+            elif field[0] == "ecl":
+                includedFields = np.append(includedFields, field[0])
+
+            elif field[0] == "pid":
+                includedFields = np.append(includedFields, field[0])
+
+        if np.array_equal(sorted(includedFields), sorted(requiredFields)):
+            validPassports += 1
+    return validPassports
+    
+def validate2(data):
     requiredFields = np.array(["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"])
     validPassports = 0
     for passport in data:
@@ -32,18 +76,14 @@ def validate1(data):
             elif field[0] == "hgt" and checkHeight(field[1]):
                 includedFields = np.append(includedFields, field[0])
                     
-            elif field[0] == "hcl":
-                import re
-                if re.search("^#([a-fA-F0-9]{6})$", field[1]):
-                    includedFields = np.append(includedFields, field[0])
+            elif field[0] == "hcl" and checkHairColor(field[1]):
+                includedFields = np.append(includedFields, field[0])
             
-            elif field[0] == "ecl" and field[1] in ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]:
+            elif field[0] == "ecl" and checkEyeColor(field[1]):
                 includedFields = np.append(includedFields, field[0])
 
-            elif field[0] == "pid":
-                import re
-                if re.search("^([0-9]{9})$", field[1]):
-                    includedFields = np.append(includedFields, field[0])
+            elif field[0] == "pid" and checkPassportId(field[1]):
+                includedFields = np.append(includedFields, field[0])
 
         if np.array_equal(sorted(includedFields), sorted(requiredFields)):
             validPassports += 1
@@ -66,12 +106,10 @@ with open('data.txt') as f:
     for block in read_blocks(f):
         buffer = block.split('\n\n')
     for i in range(len(buffer)):
-        buffer[i] = buffer[i].replace('\n', ' ')
-        buffer[i] = buffer[i].split(' ')
+        buffer[i] = buffer[i].replace('\n', ' ').split(' ')
         for j in range(len(buffer[i])):
             buffer[i][j] = buffer[i][j].split(':')
     data = buffer
     
-#print(validate1(data))
-
-print(checkHeight('194cm'))
+valid1 = validate1(data)
+valid2 = validate2(data)
