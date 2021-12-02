@@ -41,10 +41,10 @@ Your puzzle answer was 530.
 
 # Submission
 
-## Part 1
+## Part One
 
 My puzzle answer was **660**.
 
-## Part 2
+## Part Two
 
 My puzzle answer was **530**.

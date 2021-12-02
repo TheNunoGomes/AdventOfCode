@@ -36,8 +36,9 @@ Using the above example again, the three entries that sum to 2020 are 979, 366, 
 In your expense report, what is the product of the three entries that sum to 2020?
 
 # Submission
-## Part 1
+
+## Part One
 My puzzle answer was **646779**.
 
-## Part 2
+## Part Two
 My puzzle answer was **246191688**.

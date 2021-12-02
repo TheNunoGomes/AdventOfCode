@@ -70,10 +70,10 @@ What do you get if you multiply together the number of trees encountered on each
 
 # Submission
 
-## Part 1
+## Part One
 
 My puzzle answer was **159**.
 
-## Part 2
+## Part Two
 
 My puzzle answer was **6419669520**.
