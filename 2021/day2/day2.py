@@ -5,18 +5,17 @@ def calculateDepth(data):
 
 
 def calculateDepthWithAim(data):
-    distance, depth, aim = 0, 0, 0
+    depth, aim = 0, 0
     for instruction in data:
         direction, value = instruction
         if direction == "forward":
-            distance += value
             depth += value*aim
         elif direction == "up":
             aim -= value
         elif direction == "down":
             aim += value
             
-    return distance, depth
+    return sum([instruction[1] for instruction in data if instruction[0] == "forward"]), depth
 
 data = np.genfromtxt('data.txt', dtype = None, encoding = None)
 
