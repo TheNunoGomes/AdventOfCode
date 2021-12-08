@@ -1,4 +1,3 @@
-
 def fishAfterDays(data, day):
     fishes = [0 for n in range(9)]
     for fishDays in data:
