@@ -58,6 +58,8 @@ Using this new interpretation of the commands, calculate the horizontal position
 
 # Submission
 
+[My input](../day2/data.txt)
+
 ## Part One
 
 My puzzle answer was **2039256**.
