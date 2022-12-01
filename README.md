@@ -4,6 +4,8 @@ These are my submissions to each Advent of Code edition.
 
 ## Submissions
 
-*[Advent of Code 2020](/2020/2020.md)*
+_[Advent of Code 2020](/2020/2020.md)_
 
-*[Advent of Code 2021](/2021/2021.md)*
+_[Advent of Code 2021](/2021/2021.md)_
+
+_[Advent of Code 2022](/2022/2022.md)_
