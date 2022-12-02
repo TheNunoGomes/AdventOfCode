@@ -8,7 +8,6 @@ def countCaloriesByElf(data):
 
 
 def part1(data):
-    print("Day 1 | Part 1")
     maxCalories = 0
     currentCalories = 0
     for calories in data:
@@ -18,8 +17,6 @@ def part1(data):
     return maxCalories
 
 def part2(data):
-    print("Day 1 | Part 2")
-
     caloriesByElf = countCaloriesByElf(data)
     maxCalories = 0
 
