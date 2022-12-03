@@ -9,6 +9,6 @@ with open(f"datasets/day{day}_{'test' if test else 'challenge'}.txt") as f:
     data = f.readlines()
     data = [line.replace('\n', '') for line in data]
 
-print(f"Day {day} | Part {part}")
+print(f"Day {day} | Part {part} | {'Test' if test else 'Challenge'} dataset")
 print(solve(data))
 
