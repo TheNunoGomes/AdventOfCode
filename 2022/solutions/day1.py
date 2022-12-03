@@ -1,5 +1,3 @@
-import numpy as np
-
 def splitElfCalories(data):
     return [[int(calories) for calories in elf] for elf in [calories.split(' ') for calories in ' '.join(data).split('  ')]]
 

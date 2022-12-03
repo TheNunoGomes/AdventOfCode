@@ -1,5 +1,3 @@
-import numpy as np
-
 def calculateRoundScorePart1(player, opponent):
     if player == opponent:
         score = player + 3
