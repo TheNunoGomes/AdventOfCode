@@ -76,6 +76,8 @@ def argParser(args):
         raise Exception(f"Missing argument for {'/'.join(missingArguments)}")
     if not ('day' in locals()):
         raise Exception('Missing argument for -d/--day')
+    if not ('part' in locals()):
+        raise Exception('Missing argument for -p/--part')
     if unreleasedPuzzle:
         raise Exception("This day's puzzle has not been released yet!")
     if invalidDay:
