@@ -10,4 +10,3 @@ with open(f"datasets/day{day}{'_t' if test else ''}.in") as f:
 
 print(f"Day {day} | Part {part} | {'Test' if test else 'Challenge'} dataset")
 print(solve(data))
-
