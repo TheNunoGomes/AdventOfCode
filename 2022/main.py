@@ -1,5 +1,6 @@
 import sys
 from lib.parser import argParser
+sys.path.append('../lib')
 
 day, part, test = argParser(sys.argv[1:])
 
