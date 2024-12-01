@@ -29,7 +29,8 @@ try {
 
   const { day, part, test } = getArgumentValues(args);
 
-  solve(day, part, test);
+  const solution = solve(day, part, test);
+  console.log(solution);
 } catch (e) {
   console.error(e.message);
 }

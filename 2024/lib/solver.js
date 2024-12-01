@@ -20,8 +20,8 @@ function solve(day, part, test) {
   const solution = importSolution(solutionFile, solutionFunction);
   const input = readFile(inputFile);
   const data = parseContent(input);
-
-  solution(data);
+  console.log(`Solving day ${day} part ${part} ${test ? "test" : "challenge"}`);
+  return solution(data);
 }
 
 module.exports = { solve };
