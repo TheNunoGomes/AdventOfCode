@@ -44,7 +44,7 @@ function part1(data) {
   return xmasCount;
 }
 
-async function part2(data) {
+function part2(data) {
   let xmasCount = 0;
 
   // No need to check first and last rows
